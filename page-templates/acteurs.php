@@ -105,12 +105,12 @@ $acteurs = new WP_Query($args);
 											</div>
 										</div>
 										<div class="col-12 col-lg-3">
-											<?php if(have_rows('videos')): ?>
+											<?php if(have_rows('videos')): $videonum = 1; ?>
 												<div class="actor-videos mb-3">
 													<h3 class="h4"><i class="fa fa-youtube-play me-1"></i> Showreels</h3>
 													<?php while(have_rows('videos')): the_row(); ?>
-														<a target="_blank" class="text-decoration-none" href="<?php the_sub_field('video_url'); ?>"><?php the_sub_field('video_url'); ?></a>
-													<?php endwhile; ?>
+														<a target="_blank" class="text-decoration-none" href="<?php the_sub_field('video_url'); ?>">Video <?= $videonum; ?></a>
+													<?php $videonum++; endwhile; ?>
 												</div>
 											<?php endif; ?>
 											<?php if($avail): ?>
