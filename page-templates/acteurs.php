@@ -34,8 +34,6 @@ $acteurs = new WP_Query($args);
 		<div class="row">
 
 			<main class="site-main" id="main">
-
-				<?php if(is_user_logged_in()): ?>
 					<?php if($acteurs->have_posts()): ?>
 						<div class="row">
 							<h1 class="text-uppercase fw-bold py-5"><?php the_title(); ?></h1>
@@ -137,9 +135,6 @@ $acteurs = new WP_Query($args);
 						</div>
 
 					<?php endif; ?>
-				<?php else: ?>
-					<h2>You must be logged in to view this page.</h2>
-				<?php endif; ?>
 
 			</main><!-- #main -->
 
